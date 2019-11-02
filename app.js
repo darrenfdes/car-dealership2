@@ -28,7 +28,9 @@ var loginRouter = require('./routes/login');
 var processRouter = require('./routes/process');
 var process2Router = require('./routes/process2');
 var dummy=require('./routes/dummy');
+var dummysearch = require('./routes/dummysearch')
 var checkinventory = require('./routes/checkinventory');
+var pocessCustomerSearch = require('./routes/processCustomerSearch');
 var app = express();
 
 // view engine setup
@@ -48,7 +50,10 @@ app.use('/addvehicle',addvehicleRouter);
 // app.use('/login', loginRouter);
 app.use('/process', processRouter);
 app.use('/process2',process2Router);
+
 app.use('/dummy',dummy);
+app.use('/dummysearch',dummysearch);
+// app.use('/processCustomerSearch',processCustomerSearch)
 app.use('/checkinventory',checkinventory);
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
